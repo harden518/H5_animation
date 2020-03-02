@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网格布局2</title>
+    <style>
+        .wrapper {
+            display: grid;
+            /* grid-template-columns: 1fr 2fr 1fr; */
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 1rem;
+            /* grid-auto-rows: 100px; */
+            grid-auto-rows: minmax(100px,auto);
+        }
+
+        .nested{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 1rem;
+            grid-auto-rows: 70px;
+        }
+
+        .wrapper>div {
+            background: #eee;
+            padding: 1rem;
+        }
+
+        .wrapper>div:nth-child(odd) {
+            background: #ddd;
+        }
+
+        .nested>div{
+            border: 1px #333 solid;
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div>
+            Lorem ipsum dolor sit amet.
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente sit odio repellat corporis dolorem commodi
+            placeat eos. Nisi repellat neque ab, culpa aliquid dolorem porro facilis eum, ipsa doloribus numquam fugit.
+            Qui eligendi nulla omnis aperiam officiis accusantium provident ad?
+        </div>
+        <div class="nested">
+            <div>lorem</div>
+            <div>lorem</div>
+            <div>lorem</div>
+            <div>lorem</div>
+            <div>lorem</div>
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet.
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet.
+        </div>
+    </div>
+</body>
+
+</html>

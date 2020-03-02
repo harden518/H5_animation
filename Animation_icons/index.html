@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>动态字体图标</title>
+
+    <style>
+        #chain,
+        #battery,
+        #hourglass {
+            font-size: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chain" class="fa"></div>
+    <br>
+    <div id="battery" class="fa"></div>
+    <br>
+    <div id="hourglass" class="fa"></div>
+    <script>
+        //实现链接图标动画效果
+        function breakChain() {
+            let chain = document.getElementById("chain")
+            chain.innerHTML = "&#xf0c1"
+
+            setTimeout(() => {
+                chain.innerHTML = "&#xf127"
+            }, 1000)
+        }
+        breakChain()
+        setInterval(() => {
+            breakChain()
+        }, 2000);
+
+        //实现电池消耗动画效果
+        function chargeBattery() {
+            let battery = document.getElementById("battery")
+            battery.innerHTML = "&#xf244"
+
+            setTimeout(() => {
+                battery.innerHTML = "&#xf243"
+            }, 1000)
+            setTimeout(() => {
+                battery.innerHTML = "&#xf242"
+            }, 2000)
+            setTimeout(() => {
+                battery.innerHTML = "&#xf241"
+            }, 3000)
+            setTimeout(() => {
+                battery.innerHTML = "&#xf240"
+            }, 4000)
+        }
+        chargeBattery()
+        setInterval(() => {
+            chargeBattery()
+        }, 5000)
+
+        //沙漏动画效果
+        function hourglassTip() {
+            let hourglass = document.getElementById("hourglass")
+            hourglass.innerHTML = "&#xf251"
+
+            setTimeout(() => {
+                hourglass.innerHTML = "&#Xf252"
+            }, 1000)
+            setTimeout(() => {
+                hourglass.innerHTML = "&#Xf253"
+            }, 2000)
+        }
+        hourglassTip()
+        setInterval(() => {
+            hourglassTip()
+        }, 3000)
+    </script>
+</body>
+
+</html>

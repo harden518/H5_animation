@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>弹性布局</title>
+
+    <style>
+        .container {
+            display: flex;
+            /* flex-direction: row; */
+            /* row-reverse 反向排列 横轴 column 纵轴 */
+            /* flex-wrap: wrap; */
+            /* 超出当前div宽度自动换行 */
+            flex-flow: row wrap;
+            /* flex-direction和flex-wrap的结合 */
+        }
+
+        .item {
+            background: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 1rem;
+            text-align: center;
+            margin: 0.75rem;
+            flex: 1;
+            /* 对空间进行分配 */
+        }
+
+        .item:first-child {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">
+            <h3>Item 1</h3>
+        </div>
+        <div class="item">
+            <h3>Item 2</h3>
+        </div>
+        <div class="item">
+            <h3>Item 3</h3>
+        </div>
+        <div class="item">
+            <h3>Item 3</h3>
+        </div>
+        <div class="item">
+            <h3>Item 3</h3>
+        </div>
+        <div class="item">
+            <h3>Item 3</h3>
+        </div>
+        <div class="item">
+            <h3>Item 3</h3>
+        </div>
+        <div class="item">
+            <h3>Item 3</h3>
+        </div>
+    </div>
+</body>
+
+</html>

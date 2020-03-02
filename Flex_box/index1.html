@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex align</title>
+
+    <style>
+        #container {
+            display: flex;
+            background: #555;
+            /* 项目在主轴上的对齐方式 */
+            justify-content: space-evenly;
+            /* flex-start 左对齐 flex-end 右对齐 center 居中 space-around space-between space-evenly */
+            height: 600px;
+            /* 项目在交叉轴的对齐方式（需要设置高度） */
+            align-items: baseline;
+            /* stretch 占满高度 flex-start 交叉轴起点对齐 flex-end 交叉轴终点对齐 center 交叉轴中心点对齐 baseline */
+            flex-wrap: wrap;
+            align-content: stretch;
+            /* flex-start flex-end center space-between space-around stretch(默认值) */
+        }
+
+        .item {
+            background: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 1rem;
+            text-align: center;
+            margin: 0.75rem;
+            flex-basis: 100px;
+        }
+
+        .item-1 {
+            order: 3;
+        }
+
+        .item-2 {
+            align-self: center;
+            /* auto(默认值) flex-start flex-end center baseline stretch */
+            order: 2;
+        }
+
+        .item-3 {
+            order: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="item item-1">
+            <h3>Item 1</h3>
+        </div>
+        <div class="item item-2">
+            <h3>Item 2</h3>
+        </div>
+        <div class="item item-3">
+            <h3>Item 3</h3>
+        </div>
+    </div>
+</body>
+
+</html>
