@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>旋转幻灯片</title>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slide visible">
+            <img src="./img/img1.jpeg" alt="">
+        </div>
+        <div class="slide">
+            <img src="./img/img2.jpeg" alt="">
+        </div>
+        <div class="slide">
+            <img src="./img/img3.jpeg" alt="">
+        </div>
+        <div class="slide">
+            <img src="./img/img4.jpeg" alt="">
+        </div>
+        <div class="slide">
+            <img src="./img/img5.jpeg" alt="">
+        </div>
+    </div>
+
+    <script>
+        const slider = document.querySelector(".slider")
+        const slides = document.querySelectorAll(".slide")
+        let activeSlide = 0
+
+        function changeSlider() {
+            slides[activeSlide].classList.remove("visible")
+            activeSlide++
+            if (activeSlide >= slides.length) {
+                activeSlide = 0
+            }
+            slides[activeSlide].classList.add("visible")
+        }
+
+        slider.addEventListener("animationstart", () => {
+            setInterval(changeSlider, 2000)
+        })
+    </script>
+</body>
+
+</html>
