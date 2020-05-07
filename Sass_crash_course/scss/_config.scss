@@ -1,0 +1,22 @@
+$light-color: #f4f4f4;
+$font-stack: Arial, Helvetica, sans-serif;
+$primary-color: #0e6cff;
+// $primary-color: #e0ffff;
+$secondary-color: #ff8700;
+
+//根据背景色变化设置字体颜色
+@function set-text-color($color) {
+  // 若是浅色系
+  @if (lightness($color) >70) {
+    @return #333;
+  } @else {
+    //若是深色系
+    @return #fff;
+  }
+}
+
+//混合背景色和字体颜色
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
